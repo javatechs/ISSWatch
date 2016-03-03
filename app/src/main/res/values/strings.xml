@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ISS Watch</string>
+    <string name="title_activity_issmap">ISS Map</string>
+</resources>
