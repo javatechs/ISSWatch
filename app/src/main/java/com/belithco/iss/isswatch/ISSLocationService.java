@@ -58,6 +58,8 @@ public class ISSLocationService extends IntentService {
             RequestResponse rr = new RequestResponse();
             // Get weather and save to Sprout DB
             String currentLocation = new OpenNotify().getJSonData();
+            Log.d(TAG,"Current Location: "+currentLocation);
+
             // Send update to UI, if available
             Messenger messenger = (Messenger) requestBundle.get(MESSENGER);
             if (null != messenger) {
@@ -80,6 +82,8 @@ public class ISSLocationService extends IntentService {
                     Log.e(TAG, "Failed to parse object.", e);
                 } catch (RemoteException e) {
                     Log.e(TAG, "Could not pass message to UI", e);
+                } catch (Exception e) {
+                    Log.e(TAG, "Misc exception", e);
                 }
             }
         }
